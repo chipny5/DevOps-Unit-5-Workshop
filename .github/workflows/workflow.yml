@@ -15,7 +15,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: '8.0.x'  # Adjust to your target version
+        dotnet-version: '8.0.x'
 
     - name: Restore C# dependencies
       run: dotnet restore
@@ -30,20 +30,16 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '20'  # Adjust to your target version
+        node-version: '20'
 
     - name: Install Node.js dependencies
       run: npm install
-      working-directory: frontend
 
     - name: Build TypeScript
       run: npm run build
-      working-directory: frontend
 
     - name: Run ESLint
       run: npm run lint
-      working-directory: frontend
 
     - name: Run TypeScript tests
       run: npm test
-      working-directory: frontend
